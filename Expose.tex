@@ -1,61 +1,7 @@
 \documentclass[12pt, a4paper]{article}
 
-% Blindtext verwenden
-\usepackage{blindtext}
-
-% weitere Pakete
-% Grafiken aus PNG Dateien einbinden
-\usepackage{graphicx}
-\graphicspath{ {00_Data/01_Assets/00_Images/} }
-
-% Deutsche Sonderzeichen benutzen 
-\usepackage{ngerman}
-
-% deutsche Silbentrennung
-\usepackage[ngerman]{babel}
-
-% Eurozeichen einbinden
-\usepackage[right]{eurosym}
-
-% Umlaute unter UTF8 nutzen
-\usepackage[utf8]{inputenc}
-
-% Zeichenencoding
-\usepackage[T1]{fontenc}
-\usepackage{lmodern}
-\usepackage{fix-cm}
-
-% keine Silbentrennung
-\usepackage[none]{hyphenat} 
-\sloppy
-
-% Tabellen
-\usepackage{tabularx}
-
-% Mathematische Symbole importieren
-\usepackage{amssymb}
-
-% Zitieren
-\usepackage{cite}
-% Festlegung Art der Zitierung
-\bibliographystyle{abbrv}
-
-% Paket für Zeilenabstand
-\usepackage[onehalfspacing]{setspace}
-
-% für Stichwortverzeichnis
-\usepackage{makeidx}
-
-% Indexerstellung
-\makeindex
-
-% Package für Abkürzungsverzeichnis
-
-% Auf jeder Seite Überschrift anzeigen
-%\pagestyle{headings}
-
-% Seitenränder einstellen
-\usepackage[left=30mm, right=30mm, top=35mm, bottom=35mm]{geometry}
+% Package Includes
+\include{00_Data/dependencies}
 
 % Variablen
 \include{00_Data/vars}
@@ -88,6 +34,9 @@
 
 \include{00_Data/00_Chapters/expose}
  
+ % Zeige alle Literatureinträge im Verzeichnis
+\nocite{*}
+
 \addcontentsline{toc}{section}{Literatur}
 \bibliography{00_Data/02_Bib/exposebib}
 
