@@ -1,5 +1,8 @@
 \documentclass[12pt, a4paper]{article}
 
+% Blindtext verwenden
+\usepackage{blindtext}
+
 % weitere Pakete
 % Grafiken aus PNG Dateien einbinden
 \usepackage{graphicx}
@@ -55,15 +58,7 @@
 \usepackage[left=30mm, right=30mm, top=35mm, bottom=35mm]{geometry}
 
 % Variablen
-\newcommand{\firma}{<Company>}
-\newcommand{\titel}{<Document Title>}
-\newcommand{\autor}{Jonas Schmitt}
-\newcommand{\arbeitstyp}{<Document Type>}
-\newcommand{\arbeitstypeartikel}{<Article>}
-\newcommand{\fach}{<Lecture (optional)>}
-\newcommand{\betreuertitel}{<Title>}
-\newcommand{\betreuer}{<Name>}
-\newcommand{\abgabedatum}{<Date>}
+\include{00_Data/vars}
 
 \begin{document}
 
@@ -92,7 +87,7 @@
 \setcounter{page}{2}
 
 % Abstract einbinden
-\include{00_Chapters/abstract}
+\include{00_Data/00_Chapters/abstract}
 
 \newpage
 
@@ -136,8 +131,12 @@ Datum & & \autor
 \pagenumbering{arabic} 
 
 % Hier werden die einzelnen Kapitel eingelesen
-\include{00_Chapters/chapter1}
-\include{00_Chapters/chapter2}
+\IfFileExists{./00_Data/00_Chapters/chapter1}{\include{00_Data/00_Chapters/chapter1}}{}
+\IfFileExists{./00_Data/00_Chapters/chapter2}{\include{00_Data/00_Chapters/chapter2}}{}
+\IfFileExists{./00_Data/00_Chapters/chapter3}{\include{00_Data/00_Chapters/chapter3}}{}
+\IfFileExists{./00_Data/00_Chapters/chapter4}{\include{00_Data/00_Chapters/chapter4}}{}
+\IfFileExists{./00_Data/00_Chapters/chapter5}{\include{00_Data/00_Chapters/chapter5}}{}
+\IfFileExists{./00_Data/00_Chapters/chapter6}{\include{00_Data/00_Chapters/chapter6}}{}
 
 \newpage
 \setcounter{page}{1}
