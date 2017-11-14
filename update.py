@@ -1,4 +1,4 @@
-#!/bin/python3
+#!/Library/Frameworks/Python.framework/Versions/3.6/bin/python3
 import os
 from shutil import copyfile, copy
 
