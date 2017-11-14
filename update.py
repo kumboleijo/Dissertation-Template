@@ -53,4 +53,5 @@ for file in filesToUpdate:
     pass
 print( '------------------------------' )
 
+os.system( "bash compile.sh" )
 # copy( source, destination )
