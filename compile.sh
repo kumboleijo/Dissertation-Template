@@ -26,6 +26,7 @@ rm *.lof
 rm *.log
 rm *.lot
 rm *.toc
+rm *.out
 
 rm 00_Data/*.aux
 rm 00_Data/00_Chapters/*.aux
