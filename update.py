@@ -2,18 +2,23 @@
 import os
 from shutil import copyfile, copy
 
+# clone git repo
+os.system( "git clone git@gitlab.com:kumboleijo/wissenschaftliche-arbeit-template-latex.git" )
+
 # vars
-source = '/Users/jonas/Documents/GitLab/01_Private/wissenschaftliche-arbeit-template-latex/'
+source = 'wissenschaftliche-arbeit-template-latex/'
 counter = 0
 
 # files
 ausarbeitung = 'Ausarbeitung.tex'
 expose = 'Expose.tex'
 notes = 'Notes.tex'
+compile = 'compile.sh'
+update = 'update.py'
 dependecies = '00_Data/dependencies.tex'
 vars = '00_Data/vars.tex'
 
-files = [ausarbeitung,expose,notes,dependecies,vars]
+files = [ausarbeitung,expose,notes,compile,update,dependecies,vars]
 filesToUpdate = []
 
 print( '------------------------------' )
@@ -53,5 +58,7 @@ for file in filesToUpdate:
     pass
 print( '------------------------------' )
 
+# delete cloned git repo
+os.system( "rm -rf wissenschaftliche-arbeit-template-latex" )
 os.system( "bash compile.sh" )
 # copy( source, destination )
