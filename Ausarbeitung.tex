@@ -41,15 +41,17 @@
 
 \newpage
 
-\addcontentsline{toc}{section}{Sperrvermerk}
-\section*{Sperrvermerk}
-\arbeitstypeartikel \ vorliegende \arbeitstyp \ beinhaltet vertrauliche Informationen der \firma. Veröffentlichung und Vervielfältigung ist ohne vorherige schriftliche Genehmigung der \firma \ nicht gestattet. \arbeitstypeartikel \ \arbeitstyp \ ist nur den Gutachtern und den Mitgliedern des Prüfungsausschusses zugänglich zu machen.
-\\\\\\\\
-\vspace{5cm}
-\begin{tabularx}{\textwidth}[b]{p{5cm} X p{5cm}} \cline{1-1} \cline{3-3}
-Datum & & \betreuer
-\end{tabularx}
-\newpage
+\ifthenelse{\boolean{showSperrvermerk}}{
+  \addcontentsline{toc}{section}{Sperrvermerk}
+  \section*{Sperrvermerk}
+  \arbeitstypeartikel \ vorliegende \arbeitstyp \ beinhaltet vertrauliche Informationen der \firma. Veröffentlichung und Vervielfältigung ist ohne vorherige schriftliche Genehmigung der \firma \ nicht gestattet. \arbeitstypeartikel \ \arbeitstyp \ ist nur den Gutachtern und den Mitgliedern des Prüfungsausschusses zugänglich zu machen.
+  \\\\\\\\
+  \vspace{5cm}
+  \begin{tabularx}{\textwidth}[b]{p{5cm} X p{5cm}} \cline{1-1} \cline{3-3}
+  Datum & & \betreuer
+  \end{tabularx}
+  \newpage
+}
 
 \addcontentsline{toc}{section}{Eidesstaatliche Erklärung}
 \section*{Eidesstaatliche Erklärung}
