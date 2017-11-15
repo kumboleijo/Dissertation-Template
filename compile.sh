@@ -1,14 +1,24 @@
 #!/bin/bash
 
-echo "The script you are running has basename `basename $0`, dirname `dirname $0`"
+cd "$(dirname -- "$0")"
+dir="$PWD"
+echo "$dir"
 
-cd `dirname $0`
+latex Ausarbeitung
+bibtex Ausarbeitung
+pdflatex Ausarbeitung
 
+latex Expose
+bibtex Expose
+pdflatex Expose
 
-pdflatex Ausarbeitung.tex
-pdflatex Expose.tex
+latex Notes
+bibtex Notes
 pdflatex Notes.tex
 
+rm *.bbl
+rm *.blg
+rm *.dvi
 rm *.lol
 rm *.aux
 rm *.idx
