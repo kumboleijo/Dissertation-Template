@@ -8,8 +8,9 @@ os.system( "git clone git@gitlab.com:kumboleijo/wissenschaftliche-arbeit-templat
 # vars
 source = 'wissenschaftliche-arbeit-template-latex/'
 counter = 0
+specialCounter = 0
 
-# files
+# common files
 ausarbeitung = 'Ausarbeitung.tex'
 expose = 'Expose.tex'
 exzerpt = 'Exzerpt.tex'
@@ -17,42 +18,82 @@ notes = 'Notes.tex'
 compile = 'compile.sh'
 update = 'update.py'
 dependecies = '00_Data/dependencies.tex'
-vars = '00_Data/vars.tex'
 
-files = [ausarbeitung,expose,exzerpt,notes,compile,update,dependecies,vars]
-filesToUpdate = []
+# special files
+vars = '00_Data/vars.tex'
+abstractContent = '00_Data/00_Chapters/abstract.tex'
+exposeContent = '00_Data/00_Chapters/expose.tex'
+exzerptContent = '00_Data/00_Chapters/exzerpt.tex'
+notesContent = '00_Data/00_Chapters/notes.tex'
+
+commonFiles = [ausarbeitung,expose,exzerpt,notes,compile,update,dependecies]
+specialFiles = [vars,abstractContent,exposeContent,exzerptContent,notesContent]
+
+commonFilesToUpdate = []
+specialFilesToUpdate = []
 
 print( '------------------------------' )
 print( 'update latex project...' )
 print ( ' ' )
 print( '------------------------------' )
 print( 'source project: ' + source )
-print( 'which files do you want to update? (press enter to update file / type n to ignore this file)' )
+print( 'common files: which files do you want to update? (press enter to update file / type n to ignore this file)' )
 print( '------------------------------' )
-for file in files:
+for file in commonFiles:
     select = input( str(counter) + '\t' + file )
     counter = counter+1
 
     if select == '':
-        filesToUpdate.append(file)
+        commonFilesToUpdate.append(file)
     elif select == 'n':
         pass
     pass
 counter = 0
 print( '------------------------------' )
-print( 'selected files:' )
+print( 'selected common files:' )
 print( '------------------------------' )
-for file in filesToUpdate:
+for file in commonFilesToUpdate:
     print( str(counter) + '\t' + file )
     counter = counter+1
 counter = 0
 print( '------------------------------' )
-print( 'update files...' )
+print( 'update common files...' )
 print( '------------------------------' )
-for file in filesToUpdate:
+for file in commonFilesToUpdate:
     status = os.path.isfile( source+file )
     print( str(counter) + '\t' + str(status) + '\t' + file )
     counter = counter+1
+
+    if status:
+        copy( source+file, file )
+    pass
+print( '------------------------------' )
+print( 'special files: which files do you want to update? (press enter to IGNORE the file / type y to update)' )
+print( '------------------------------' )
+for file in specialFiles:
+    select = input( str(specialCounter) + '\t' + file )
+    specialCounter = specialCounter+1
+
+    if select == 'y':
+        specialFilesToUpdate.append(file)
+    elif select == '':
+        pass
+    pass
+specialCounter = 0
+print( '------------------------------' )
+print( 'selected special files:' )
+print( '------------------------------' )
+for file in specialFilesToUpdate:
+    print( str(specialCounter) + '\t' + file )
+    specialCounter = specialCounter+1
+specialCounter = 0
+print( '------------------------------' )
+print( 'update special files...' )
+print( '------------------------------' )
+for file in specialFilesToUpdate:
+    status = os.path.isfile( source+file )
+    print( str(specialCounter) + '\t' + str(status) + '\t' + file )
+    specialCounter = specialCounter+1
 
     if status:
         copy( source+file, file )
