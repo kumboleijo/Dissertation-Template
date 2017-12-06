@@ -12,13 +12,14 @@ counter = 0
 # files
 ausarbeitung = 'Ausarbeitung.tex'
 expose = 'Expose.tex'
+exzerpt = 'Exzerpt.tex'
 notes = 'Notes.tex'
 compile = 'compile.sh'
 update = 'update.py'
 dependecies = '00_Data/dependencies.tex'
 vars = '00_Data/vars.tex'
 
-files = [ausarbeitung,expose,notes,compile,update,dependecies,vars]
+files = [ausarbeitung,expose,exzerpt,notes,compile,update,dependecies,vars]
 filesToUpdate = []
 
 print( '------------------------------' )
@@ -39,7 +40,7 @@ for file in files:
     pass
 counter = 0
 print( '------------------------------' )
-print( 'selected files:' ) 
+print( 'selected files:' )
 print( '------------------------------' )
 for file in filesToUpdate:
     print( str(counter) + '\t' + file )
@@ -53,7 +54,7 @@ for file in filesToUpdate:
     print( str(counter) + '\t' + str(status) + '\t' + file )
     counter = counter+1
 
-    if status: 
+    if status:
         copy( source+file, file )
     pass
 print( '------------------------------' )

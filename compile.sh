@@ -12,6 +12,10 @@ latex Expose
 bibtex Expose
 pdflatex Expose
 
+latex Exzerpt
+bibtex Exzerpt
+pdflatex Exzerpt
+
 latex Notes
 bibtex Notes
 pdflatex Notes.tex
