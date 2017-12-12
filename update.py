@@ -25,9 +25,10 @@ abstractContent = '00_Data/00_Chapters/abstract.tex'
 exposeContent = '00_Data/00_Chapters/expose.tex'
 exzerptContent = '00_Data/00_Chapters/exzerpt.tex'
 notesContent = '00_Data/00_Chapters/notes.tex'
+acronyms = '00_Data/00_Chapters/acronyms.tex'
 
 commonFiles = [ausarbeitung,expose,exzerpt,notes,compile,update,dependecies]
-specialFiles = [vars,abstractContent,exposeContent,exzerptContent,notesContent]
+specialFiles = [vars,abstractContent,exposeContent,exzerptContent,notesContent, acronyms]
 
 commonFilesToUpdate = []
 specialFilesToUpdate = []
