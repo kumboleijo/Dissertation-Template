@@ -4,21 +4,29 @@ cd "$(dirname -- "$0")"
 dir="$PWD"
 echo "$dir"
 
-latex Ausarbeitung
+# latex Ausarbeitung
+pdflatex Ausarbeitung
 bibtex Ausarbeitung
 pdflatex Ausarbeitung
 
-latex Expose
-bibtex Expose
+
+# latex Expose
 pdflatex Expose
+bibtex Expose
+pdflatex Ausarbeitung
 
-latex Exzerpt
-bibtex Exzerpt
+
+# latex Exzerpt
 pdflatex Exzerpt
+bibtex Exzerpt
+pdflatex Ausarbeitung
 
-latex Notes
-bibtex Notes
+
+# latex Notes
 pdflatex Notes.tex
+bibtex Notes
+pdflatex Ausarbeitung
+
 
 rm *.bbl
 rm *.blg
