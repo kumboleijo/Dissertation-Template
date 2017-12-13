@@ -39,6 +39,7 @@ rm *.log
 rm *.lot
 rm *.toc
 rm *.out
+rm *.nlo
 
 rm 00_Data/*.aux
 rm 00_Data/00_Chapters/*.aux
