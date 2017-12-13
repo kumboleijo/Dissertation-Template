@@ -1,14 +1,3 @@
-% Hyperlinks in PDF Datei
-\usepackage[colorlinks,
-pdfpagelabels,
-pdfstartview = FitH,
-bookmarksopen = true,
-bookmarksnumbered = true,
-linkcolor = black,
-plainpages = false,
-hypertexnames = false,
-citecolor = black] {hyperref}
-
 % Blindtext verwenden
 \usepackage{blindtext}
 
@@ -80,6 +69,20 @@ citecolor = black] {hyperref}
 
 % Auf jeder Seite Überschrift anzeigen
 %\pagestyle{headings}
+
+% --- Abkürzungsverzeichnis: ----------------------------
+\usepackage[german]{nomencl}
+% Befehl umbenennen in abk
+\let\abk\nomenclature
+% Deutsche Überschrift
+\renewcommand{\nomname}{Abkürzungsverzeichnis}
+% Punkte zw. Abkürzung und Erklärung
+\setlength{\nomlabelwidth}{.40\hsize}
+\renewcommand{\nomlabel}[1]{#1 \dotfill}
+% Zeilenabstände verkleinern
+\setlength{\nomitemsep}{-\parsep}
+\makenomenclature
+%--------------------------------------------------------
 
 % Seitenränder einstellen
 \usepackage[left=30mm, right=30mm, top=35mm, bottom=35mm]{geometry}

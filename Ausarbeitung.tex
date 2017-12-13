@@ -6,6 +6,23 @@
 % Variablen
 \include{00_Data/vars}
 
+% Hyperlinks in PDF Datei
+\usepackage[colorlinks,
+pdfpagelabels,
+pdfstartview = FitH,
+bookmarksopen = true,
+bookmarksnumbered = true,
+linkcolor = black,
+plainpages = false,
+hypertexnames = false,
+citecolor = black,
+hidelinks,
+pdftitle={\titel},
+pdfsubject={\subject},
+pdfauthor={\autor},
+pdfkeywords={\keywords}
+] {hyperref}
+
 \begin{document}
 
 \begin{titlepage}
@@ -76,7 +93,8 @@ Datum & & \autor
 
 \newpage
 
-\include{00_Data/00_Chapters/acronyms}
+\addcontentsline{toc}{section}{Abkürzungsverzeichnis}
+\printnomenclature
 
 \newpage
 
