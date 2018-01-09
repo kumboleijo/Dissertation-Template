@@ -13,19 +13,19 @@ pdflatex Ausarbeitung
 # latex Expose
 pdflatex Expose
 bibtex Expose
-pdflatex Ausarbeitung
+pdflatex Expose
 
 
 # latex Exzerpt
 pdflatex Exzerpt
 bibtex Exzerpt
-pdflatex Ausarbeitung
+pdflatex Exzerpt
 
 
 # latex Notes
-pdflatex Notes.tex
+pdflatex Notes
 bibtex Notes
-pdflatex Ausarbeitung
+pdflatex Notes
 
 
 rm *.bbl
