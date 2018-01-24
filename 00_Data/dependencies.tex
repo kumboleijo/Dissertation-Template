@@ -6,9 +6,28 @@
 
 % Texte einfärben
 \usepackage{color}
+\definecolor{orange}{rgb}{1,0.5,0}
 
 % Code Snippets einfügen
 \usepackage{listings}
+
+% Code Formatting für JavaScript
+\lstdefinelanguage{JavaScript}{
+  keywords={break, case, catch, continue, debugger, default, delete, do, else, finally, for, function, if, in, instanceof, new, return, switch, this, throw, try, typeof, var, void, while, with},
+  keywordstyle=\color{blue}\bfseries,
+  ndkeywords={class, export, boolean, throw, implements, import, this},
+  ndkeywordstyle=\color{darkgray}\bfseries,
+  identifierstyle=\color{black},
+  sensitive=false,
+  comment=[l]{//},
+  morecomment=[s]{/*}{*/},
+  commentstyle=\color{purple}\ttfamily,
+  stringstyle=\color{orange}\ttfamily,
+  morestring=[b]',
+  morestring=[b]"
+}
+
+
 \lstset{
   backgroundcolor=\color{white}, 
   frame=single,
