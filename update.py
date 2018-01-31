@@ -6,7 +6,7 @@ from shutil import copyfile, copy
 os.system( "git clone https://github.com/kumboleijo/dissertation-template.git" )
 
 # vars
-source = 'wissenschaftliche-arbeit-template-latex/'
+source = 'dissertation-template/'
 counter = 0
 specialCounter = 0
 
@@ -101,6 +101,6 @@ for file in specialFilesToUpdate:
 print( '------------------------------' )
 
 # delete cloned git repo
-os.system( "rm -rf wissenschaftliche-arbeit-template-latex" )
+os.system( "rm -rf " + source )
 os.system( "bash compile.sh" )
 # copy( source, destination )
