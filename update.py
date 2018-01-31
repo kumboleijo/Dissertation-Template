@@ -3,7 +3,7 @@ import os
 from shutil import copyfile, copy
 
 # clone git repo
-os.system( "git clone git@gitlab.com:kumboleijo/wissenschaftliche-arbeit-template-latex.git" )
+os.system( "git clone https://github.com/kumboleijo/dissertation-template.git" )
 
 # vars
 source = 'wissenschaftliche-arbeit-template-latex/'
