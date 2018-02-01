@@ -23,8 +23,10 @@ pdfauthor={\autor},
 pdfkeywords={\keywords}
 ] {hyperref}
 
+% Dokumenten Beginn
 \begin{document}
 
+% Titelseite
 \begin{titlepage}
 	\centering
 	{\scshape\LARGE \firma \par}
@@ -38,6 +40,7 @@ pdfkeywords={\keywords}
 	{\Large \fach \par }
 	\vspace{1cm}
 	{\Large\itshape \autor \par}
+	{\itshape \id \par}
 	\vfill
 	{betreut durch \par}
 	{\betreuertitel \ \betreuer \par}
@@ -54,10 +57,12 @@ pdfkeywords={\keywords}
 
 \newpage
 
+% Inhaltsverzeichnis anzeigen
 \tableofcontents
 
 \newpage
 
+% Sperrvermerk
 \ifthenelse{\boolean{showSperrvermerk}}{
   \addcontentsline{toc}{section}{Sperrvermerk}
   \section*{Sperrvermerk}
@@ -70,9 +75,10 @@ pdfkeywords={\keywords}
   \newpage
 }
 
+% Eidesstaatliche Erklärung
 \addcontentsline{toc}{section}{Eidesstaatliche Erklärung}
 \section*{Eidesstaatliche Erklärung}
-Hiermit versichere ich, dass ich die vorliegende Arbeit selbstständig und ohne Benutzung anderer als der angegebenen Hilfsmittel angefertigt habe. Alle Stellen, die wörtlich oder sinngemäß aus anderen Schriften entnommen wurden, sind als solche kenntlich gemacht. 
+Hiermit versichere ich, dass ich die vorliegende Arbeit selbstständig und ohne Benutzung anderer als der angegebenen Hilfsmittel angefertigt habe. Alle Stellen, die wörtlich oder sinngemäß aus anderen Schriften entnommen wurden, sind als solche kenntlich gemacht.
 \\\\
 Die Arbeit ist noch nicht veröffentlicht oder anderweitig für Prüfungszwecke vorgelegt worden.
 \\\\\\\\
@@ -83,26 +89,31 @@ Datum & & \autor
 
 \newpage
 
+% Abbildungsverzeichnis
 \addcontentsline{toc}{section}{Abbildungsverzeichnis}
 \listoffigures
 
 \newpage
 
+% Tabellenverzeichnis
 \addcontentsline{toc}{section}{Tabellenverzeichnis}
 \listoftables
 
 \newpage
 
+% Abkürzungsverzeichnis
 \addcontentsline{toc}{section}{Abkürzungsverzeichnis}
 \printnomenclature
 
 \newpage
 
+% Listings
 \addcontentsline{toc}{section}{Listings}
 \lstlistoflistings
 
 \newpage
 
+% Beginn der Seitenzählung
 \setcounter{page}{1}
 \pagenumbering{arabic} 
 
@@ -115,10 +126,16 @@ Datum & & \autor
 \IfFileExists{./00_Data/00_Chapters/chapter6}{\include{00_Data/00_Chapters/chapter6}}{}
 
 \newpage
-\setcounter{page}{1}
 \pagenumbering{roman} 
+\setcounter{page}{10}
 
+% Literatur
 \addcontentsline{toc}{section}{Literatur}
 \bibliography{00_Data/02_Bib/mybib}
+
+\newpage
+
+% Anhänge
+\include{00_Data/00_Chapters/appendix}
 
 \end{document}
