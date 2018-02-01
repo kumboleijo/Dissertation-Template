@@ -3,7 +3,7 @@ import os
 from shutil import copyfile, copy
 
 # clone git repo
-os.system( "git clone https://github.com/kumboleijo/dissertation-template.git" )
+os.system("git clone https://github.com/kumboleijo/dissertation-template.git")
 
 # vars
 source = 'dissertation-template/'
@@ -25,22 +25,25 @@ abstractContent = '00_Data/00_Chapters/abstract.tex'
 exposeContent = '00_Data/00_Chapters/expose.tex'
 exzerptContent = '00_Data/00_Chapters/exzerpt.tex'
 notesContent = '00_Data/00_Chapters/notes.tex'
+appendixContent = '00_Data/00_Chapters/appendix.tex'
 
-commonFiles = [ausarbeitung,expose,exzerpt,notes,compile,update,dependecies]
-specialFiles = [vars,abstractContent,exposeContent,exzerptContent,notesContent]
+commonFiles = [ausarbeitung, expose, exzerpt,
+               notes, compile, update, dependecies]
+specialFiles = [vars, abstractContent, exposeContent,
+                exzerptContent, notesContent, appendixContent]
 
 commonFilesToUpdate = []
 specialFilesToUpdate = []
 
-print( '------------------------------' )
-print( 'update latex project...' )
-print ( ' ' )
-print( '------------------------------' )
-print( 'source project: ' + source )
-print( 'common files: which files do you want to update? (press enter to update file / type n to ignore this file)' )
-print( '------------------------------' )
+print('------------------------------')
+print('update latex project...')
+print(' ')
+print('------------------------------')
+print('source project: ' + source)
+print('common files: which files do you want to update? (press enter to update file / type n to ignore this file)')
+print('------------------------------')
 for file in commonFiles:
-    select = input( str(counter) + '\t' + file )
+    select = input(str(counter) + '\t' + file)
     counter = counter+1
 
     if select == '':
@@ -49,29 +52,29 @@ for file in commonFiles:
         pass
     pass
 counter = 0
-print( '------------------------------' )
-print( 'selected common files:' )
-print( '------------------------------' )
+print('------------------------------')
+print('selected common files:')
+print('------------------------------')
 for file in commonFilesToUpdate:
-    print( str(counter) + '\t' + file )
+    print(str(counter) + '\t' + file)
     counter = counter+1
 counter = 0
-print( '------------------------------' )
-print( 'update common files...' )
-print( '------------------------------' )
+print('------------------------------')
+print('update common files...')
+print('------------------------------')
 for file in commonFilesToUpdate:
-    status = os.path.isfile( source+file )
-    print( str(counter) + '\t' + str(status) + '\t' + file )
+    status = os.path.isfile(source+file)
+    print(str(counter) + '\t' + str(status) + '\t' + file)
     counter = counter+1
 
     if status:
-        copy( source+file, file )
+        copy(source+file, file)
     pass
-print( '------------------------------' )
-print( 'special files: which files do you want to update? (press enter to IGNORE the file / type y to update)' )
-print( '------------------------------' )
+print('------------------------------')
+print('special files: which files do you want to update? (press enter to IGNORE the file / type y to update)')
+print('------------------------------')
 for file in specialFiles:
-    select = input( str(specialCounter) + '\t' + file )
+    select = input(str(specialCounter) + '\t' + file)
     specialCounter = specialCounter+1
 
     if select == 'y':
@@ -80,27 +83,27 @@ for file in specialFiles:
         pass
     pass
 specialCounter = 0
-print( '------------------------------' )
-print( 'selected special files:' )
-print( '------------------------------' )
+print('------------------------------')
+print('selected special files:')
+print('------------------------------')
 for file in specialFilesToUpdate:
-    print( str(specialCounter) + '\t' + file )
+    print(str(specialCounter) + '\t' + file)
     specialCounter = specialCounter+1
 specialCounter = 0
-print( '------------------------------' )
-print( 'update special files...' )
-print( '------------------------------' )
+print('------------------------------')
+print('update special files...')
+print('------------------------------')
 for file in specialFilesToUpdate:
-    status = os.path.isfile( source+file )
-    print( str(specialCounter) + '\t' + str(status) + '\t' + file )
+    status = os.path.isfile(source+file)
+    print(str(specialCounter) + '\t' + str(status) + '\t' + file)
     specialCounter = specialCounter+1
 
     if status:
-        copy( source+file, file )
+        copy(source+file, file)
     pass
-print( '------------------------------' )
+print('------------------------------')
 
 # delete cloned git repo
-os.system( "rm -rf " + source )
-os.system( "bash compile.sh" )
+os.system("rm -rf " + source)
+os.system("bash compile.sh all")
 # copy( source, destination )

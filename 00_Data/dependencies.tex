@@ -27,21 +27,18 @@
   morestring=[b]"
 }
 
-
 \lstset{
-  backgroundcolor=\color{white}, 
+  backgroundcolor=\color{white},
   frame=single,
   keywordstyle=\color{blue},
   numbers=left,
-  language=Python}
+  language=bash,
+  breaklines=true}
 
 % weitere Pakete
 % Grafiken aus PNG Dateien einbinden
 \usepackage{graphicx}
 \graphicspath{ {00_Assets/00_Images/} }
-
-% Deutsche Sonderzeichen benutzen 
-\usepackage{ngerman}
 
 % deutsche Silbentrennung
 \usepackage[ngerman]{babel}
@@ -58,11 +55,13 @@
 \usepackage{fix-cm}
 
 % keine Silbentrennung
-\usepackage[none]{hyphenat} 
+\usepackage[none]{hyphenat}
 \sloppy
 
 % Tabellen
 \usepackage{tabularx}
+\usepackage{floatrow}
+\floatsetup[table]{capposition=top}
 
 % Mathematische Symbole importieren
 \usepackage{amssymb}
@@ -70,7 +69,7 @@
 % Zitieren
 \usepackage{cite}
 % Festlegung Art der Zitierung
-\bibliographystyle{abbrv}
+\bibliographystyle{ieeetr}
 
 % Paket für Zeilenabstand
 \usepackage[onehalfspacing]{setspace}
@@ -84,11 +83,18 @@
 % Indexerstellung
 \makeindex
 
-% Package für Abkürzungsverzeichnis
+% Package für Anhänge
+\usepackage[toc,page]{appendix}
+
+% Package für Fußtnoten
+\usepackage[hang]{footmisc}
+\setlength{\footnotemargin}{1em}
+\setlength{\skip\footins}{3em}
 
 % Auf jeder Seite Überschrift anzeigen
 %\pagestyle{headings}
 
+% Package für Abkürzungsverzeichnis
 % --- Abkürzungsverzeichnis: ----------------------------
 \usepackage[german]{nomencl}
 % Befehl umbenennen in abk
