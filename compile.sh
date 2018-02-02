@@ -2,10 +2,12 @@
 
 cd "$(dirname -- "$0")"
 dir="$PWD"
+
+VERSION="1.0"
 echo
 echo --------------------------------------
 echo LaTex compile script by Kumboleijo
-echo Version: 1.0
+echo Version: "$VERSION"
 echo --------------------------------------
 echo
 
@@ -147,6 +149,6 @@ echo ready
 echo
 echo --------------------------------------
 echo LaTex compile script by Kumboleijo
-echo Version: 1.0
+echo Version: "$VERSION"
 echo --------------------------------------
 echo

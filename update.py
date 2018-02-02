@@ -2,6 +2,14 @@
 import os
 from shutil import copyfile, copy
 
+version = '1.0'
+
+print('------------------------------')
+print('Update script for LaTex project by Kumboleijo')
+print('Version: ' + version)
+print('------------------------------')
+print()
+
 # clone git repo
 os.system("git clone https://github.com/kumboleijo/dissertation-template.git")
 
@@ -107,3 +115,10 @@ print('------------------------------')
 os.system("rm -rf " + source)
 os.system("bash compile.sh all")
 # copy( source, destination )
+
+print
+print('------------------------------')
+print('Update script for LaTex project by Kumboleijo')
+print('Version: ' + version)
+print('------------------------------')
+print()
