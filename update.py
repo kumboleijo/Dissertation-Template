@@ -113,7 +113,8 @@ print('------------------------------')
 
 # delete cloned git repo
 os.system("rm -rf " + source)
-os.system("bash compile.sh all")
+
+#os.system("bash compile.sh all")
 # copy( source, destination )
 
 print
