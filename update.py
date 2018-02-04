@@ -2,7 +2,7 @@
 import os
 from shutil import copyfile, copy
 
-version = '1.0'
+version = '1.0.1'
 
 print('------------------------------')
 print('Update script for LaTex project by Kumboleijo')
@@ -29,6 +29,7 @@ dependecies = '00_Data/dependencies.tex'
 
 # special files
 vars = '00_Data/vars.tex'
+toggles = '00_Data/toggles.tex'
 abstractContent = '00_Data/00_Chapters/abstract.tex'
 exposeContent = '00_Data/00_Chapters/expose.tex'
 exzerptContent = '00_Data/00_Chapters/exzerpt.tex'
@@ -37,7 +38,7 @@ appendixContent = '00_Data/00_Chapters/appendix.tex'
 
 commonFiles = [ausarbeitung, expose, exzerpt,
                notes, compile, update, dependecies]
-specialFiles = [vars, abstractContent, exposeContent,
+specialFiles = [vars, toggles, abstractContent, exposeContent,
                 exzerptContent, notesContent, appendixContent]
 
 commonFilesToUpdate = []

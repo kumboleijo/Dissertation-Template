@@ -6,6 +6,9 @@
 % Variablen
 \include{00_Data/vars}
 
+% Toggles
+\include{00_Data/toggles}
+
 % Hyperlinks in PDF Datei
 \usepackage[colorlinks,
 pdfpagelabels,
@@ -76,40 +79,50 @@ pdfkeywords={\keywords}
 }
 
 % Eidesstaatliche Erklärung
-\addcontentsline{toc}{section}{Eidesstaatliche Erklärung}
-\section*{Eidesstaatliche Erklärung}
-Hiermit versichere ich, dass ich die vorliegende Arbeit selbstständig und ohne Benutzung anderer als der angegebenen Hilfsmittel angefertigt habe. Alle Stellen, die wörtlich oder sinngemäß aus anderen Schriften entnommen wurden, sind als solche kenntlich gemacht.
-\\\\
-Die Arbeit ist noch nicht veröffentlicht oder anderweitig für Prüfungszwecke vorgelegt worden.
-\\\\\\\\
-\vspace{5cm}
-\begin{tabularx}{\textwidth}[b]{p{5cm} X p{5cm}} \cline{1-1} \cline{3-3}
-Datum & & \autor
-\end{tabularx}
+\ifthenelse{\boolean{showErklaerung}}{
+  \addcontentsline{toc}{section}{Eidesstaatliche Erklärung}
+  \section*{Eidesstaatliche Erklärung}
+  Hiermit versichere ich, dass ich die vorliegende Arbeit selbstständig und ohne Benutzung anderer als der angegebenen Hilfsmittel angefertigt habe. Alle Stellen, die wörtlich oder sinngemäß aus anderen Schriften entnommen wurden, sind als solche kenntlich gemacht.
+  \\\\
+  Die Arbeit ist noch nicht veröffentlicht oder anderweitig für Prüfungszwecke vorgelegt worden.
+  \\\\\\\\
+  \vspace{5cm}
+  \begin{tabularx}{\textwidth}[b]{p{5cm} X p{5cm}} \cline{1-1} \cline{3-3}
+  Datum & & \autor
+  \end{tabularx}
+}
 
 \newpage
 
 % Abbildungsverzeichnis
-\addcontentsline{toc}{section}{Abbildungsverzeichnis}
-\listoffigures
+\ifthenelse{\boolean{showListOfFigures}}{
+  \addcontentsline{toc}{section}{Abbildungsverzeichnis}
+  \listoffigures
+}
 
 \newpage
 
 % Tabellenverzeichnis
-\addcontentsline{toc}{section}{Tabellenverzeichnis}
-\listoftables
+\ifthenelse{\boolean{showListOfTables}}{
+  \addcontentsline{toc}{section}{Tabellenverzeichnis}
+  \listoftables
+} 
 
 \newpage
 
 % Abkürzungsverzeichnis
-\addcontentsline{toc}{section}{Abkürzungsverzeichnis}
-\printnomenclature
+\ifthenelse{\boolean{showAbbr}}{
+  \addcontentsline{toc}{section}{Abkürzungsverzeichnis}
+  \printnomenclature
+}
 
 \newpage
 
 % Listings
-\addcontentsline{toc}{section}{Listings}
-\lstlistoflistings
+\ifthenelse{\boolean{showListings}}{
+  \addcontentsline{toc}{section}{Listings}
+  \lstlistoflistings
+}
 
 \newpage
 
