@@ -208,6 +208,9 @@ TSWLatexianTemp*
 # Texpad
 .texpadtmp
 
+# VS Code
+.vscode
+
 # Kile
 *.backup
 
