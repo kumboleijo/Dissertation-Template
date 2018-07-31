@@ -24,6 +24,7 @@ expose = 'Expose.tex'
 exzerpt = 'Exzerpt.tex'
 notes = 'Notes.tex'
 compile = 'compile.sh'
+countWords = 'countWords.sh'
 update = 'update.py'
 dependecies = '00_Data/dependencies.tex'
 
@@ -37,7 +38,7 @@ notesContent = '00_Data/00_Chapters/notes.tex'
 appendixContent = '00_Data/00_Chapters/appendix.tex'
 
 commonFiles = [ausarbeitung, expose, exzerpt,
-               notes, compile, update, dependecies]
+               notes, compile, countWords, update, dependecies]
 specialFiles = [vars, toggles, abstractContent, exposeContent,
                 exzerptContent, notesContent, appendixContent]
 
