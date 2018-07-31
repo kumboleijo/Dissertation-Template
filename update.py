@@ -2,7 +2,7 @@
 import os
 from shutil import copyfile, copy
 
-version = '1.0.1'
+version = '1.1.0'
 
 print('------------------------------')
 print('Update script for LaTex project by Kumboleijo')
