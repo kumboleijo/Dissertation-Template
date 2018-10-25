@@ -31,28 +31,33 @@ pdfkeywords={\keywords}
 
 % Titelseite
 \begin{titlepage}
-	\centering
-	{\scshape\LARGE \firma \par}
-	\vspace{1cm}
-	{\scshape\Large \arbeitstyp \par}
-	\vspace{1.5cm}
-	{\line(1,0){400} \par}
-	{\huge\bfseries \titel \par}
-	{\line(1,0){400} \par}
-	\vspace{2cm}
-	{\Large \fach \par }
-	\vspace{1cm}
-	{\Large\itshape \autor \par}
-	{\itshape \id \par}
-	\vfill
-	{betreut durch \par}
-	{\betreuertitel \ \betreuer \par}
-	\vfill
-	{\large \abgabedatum \par}
+    \ifthenelse{\boolean{customTitlepage}}{
+        \include{00_Data/00_Chapters/customTitlepage}
+    }{
+    \centering
+        {\scshape\LARGE \firma \par}
+        \vspace{1cm}
+        {\scshape\Large \arbeitstyp \par}
+        \vspace{1.5cm}
+        {\line(1,0){400} \par}
+        {\huge\bfseries \titel \par}
+        {\line(1,0){400} \par}
+        \vspace{2cm}
+        {\Large \fach \par }
+        \vspace{1cm}
+        {\Large\itshape \autor \par}
+        {\itshape \id \par}
+        \vfill
+        {betreut durch \par}
+        {\betreuertitel \ \betreuer \par}
+        \vfill
+        {\large \abgabedatum \par}
+    }
 \end{titlepage}
 
 \newpage
-\pagenumbering{Roman} 
+\pagenumbering{Roman}
+
 \setcounter{page}{2}
 
 % Abstract einbinden
@@ -106,7 +111,7 @@ pdfkeywords={\keywords}
 \ifthenelse{\boolean{showListOfTables}}{
   \addcontentsline{toc}{section}{Tabellenverzeichnis}
   \listoftables
-} 
+}
 
 \newpage
 
@@ -128,7 +133,7 @@ pdfkeywords={\keywords}
 
 % Beginn der Seitenzählung
 \setcounter{page}{1}
-\pagenumbering{arabic} 
+\pagenumbering{arabic}
 
 % Hier werden die einzelnen Kapitel eingelesen
 \IfFileExists{./00_Data/00_Chapters/chapter1}{\include{00_Data/00_Chapters/chapter1}}{}
@@ -139,7 +144,7 @@ pdfkeywords={\keywords}
 \IfFileExists{./00_Data/00_Chapters/chapter6}{\include{00_Data/00_Chapters/chapter6}}{}
 
 \newpage
-\pagenumbering{roman} 
+\pagenumbering{roman}
 \setcounter{page}{10}
 
 % Literatur
