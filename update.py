@@ -31,6 +31,7 @@ dependecies = '00_Data/dependencies.tex'
 # special files
 vars = '00_Data/vars.tex'
 toggles = '00_Data/toggles.tex'
+customTitlepage = '00_Data/00_Chapters/customTitlepage.text'
 abstractContent = '00_Data/00_Chapters/abstract.tex'
 exposeContent = '00_Data/00_Chapters/expose.tex'
 exzerptContent = '00_Data/00_Chapters/exzerpt.tex'
@@ -39,7 +40,7 @@ appendixContent = '00_Data/00_Chapters/appendix.tex'
 
 commonFiles = [ausarbeitung, expose, exzerpt,
                notes, compile, countWords, update, dependecies]
-specialFiles = [vars, toggles, abstractContent, exposeContent,
+specialFiles = [vars, toggles, customTitlepage, abstractContent, exposeContent,
                 exzerptContent, notesContent, appendixContent]
 
 commonFilesToUpdate = []
