@@ -31,7 +31,7 @@ dependecies = '00_Data/dependencies.tex'
 # special files
 vars = '00_Data/vars.tex'
 toggles = '00_Data/toggles.tex'
-customTitlepage = '00_Data/00_Chapters/customTitlepage.text'
+customTitlepage = '00_Data/00_Chapters/customTitlepage.tex'
 abstractContent = '00_Data/00_Chapters/abstract.tex'
 exposeContent = '00_Data/00_Chapters/expose.tex'
 exzerptContent = '00_Data/00_Chapters/exzerpt.tex'
