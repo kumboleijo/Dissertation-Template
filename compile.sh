@@ -3,7 +3,7 @@
 cd "$(dirname -- "$0")"
 dir="$PWD"
 
-VERSION="1.0"
+VERSION="1.0.1"
 echo
 echo --------------------------------------
 echo LaTex compile script by Kumboleijo
@@ -44,6 +44,10 @@ then
     rm *.ilg
     rm *.ind
     rm *.nls
+    rm *_temp.tex
+    rm *.fls
+    rm *.fdb_latexmk
+    rm *.synctex.gz
 
     rm 00_Data/*.aux
     rm 00_Data/00_Chapters/*.aux
@@ -99,6 +103,10 @@ then
     rm *.ilg
     rm *.ind
     rm *.nls
+    rm *_temp.tex
+    rm *.fls
+    rm *.fdb_latexmk
+    rm *.synctex.gz
 
     rm 00_Data/*.aux
     rm 00_Data/00_Chapters/*.aux
@@ -106,7 +114,6 @@ then
     mkdir 01_Exports
     mv *.pdf 01_Exports
 
-# else
 elif [ "$ARGUMENT" = "clean" ]
 then
     echo
@@ -127,6 +134,10 @@ then
     rm *.ilg
     rm *.ind
     rm *.nls
+    rm *_temp.tex
+    rm *.fls
+    rm *.fdb_latexmk
+    rm *.synctex.gz
 
     rm 00_Data/*.aux
     rm 00_Data/00_Chapters/*.aux
@@ -143,6 +154,37 @@ else
     makeindex "$ARGUMENT".nlo -s nomencl.ist -o "$ARGUMENT".nls
     pdflatex "$ARGUMENT"
     pdflatex "$ARGUMENT"
+
+    echo
+    echo finished compiling
+    echo
+    echo make clean
+
+    rm *.bbl
+    rm *.blg
+    rm *.dvi
+    rm *.lol
+    rm *.aux
+    rm *.idx
+    rm *.lof
+    rm *.log
+    rm *.lot
+    rm *.toc
+    rm *.out
+    rm *.nlo
+    rm *.ilg
+    rm *.ind
+    rm *.nls
+    rm *_temp.tex
+    rm *.fls
+    rm *.fdb_latexmk
+    rm *.synctex.gz
+
+    rm 00_Data/*.aux
+    rm 00_Data/00_Chapters/*.aux
+
+    mkdir 01_Exports
+    mv *.pdf 01_Exports
 fi
 echo
 echo ready
