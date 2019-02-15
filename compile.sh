@@ -3,7 +3,7 @@
 cd "$(dirname -- "$0")"
 dir="$PWD"
 
-VERSION="1.0.1"
+VERSION="1.1.0"
 echo
 echo --------------------------------------
 echo LaTex compile script by Kumboleijo
@@ -12,18 +12,36 @@ echo --------------------------------------
 echo
 
 ARGUMENT="$1"
+RELEASE="$2"
+TIMESTAMP=$(date +%Y-%m-%d_%H-%M-%S)
+echo $ARGUMENT
+echo $RELEASE
+echo $TIMESTAMP
 
-if [ "$ARGUMENT" = "" ]
+if [ "$ARGUMENT" = "Ausarbeitung" ]
 then
     echo start compiling wihtout parameters...
     echo
 
-    pdflatex Ausarbeitung
-    bibtex Ausarbeitung
-    makeindex Ausarbeitung.nlo -s nomencl.ist -o Ausarbeitung.nls
-    pdflatex Ausarbeitung
-    pdflatex Ausarbeitung
-
+    if [ "$RELEASE" = "-release" ]
+    then    
+        pdflatex Ausarbeitung
+        bibtex Ausarbeitung
+        makeindex Ausarbeitung.nlo -s nomencl.ist -o Ausarbeitung.nls
+        pdflatex Ausarbeitung
+        pdflatex Ausarbeitung
+    elif [ "$RELEASE" = "" ]
+    then    
+        pdflatex --jobname=Ausarbeitung_$TIMESTAMP Ausarbeitung
+        bibtex Ausarbeitung
+        makeindex Ausarbeitung.nlo -s nomencl.ist -o Ausarbeitung.nls
+        pdflatex --jobname=Ausarbeitung_$TIMESTAMP Ausarbeitung
+        pdflatex --jobname=Ausarbeitung_$TIMESTAMP Ausarbeitung
+    else
+        echo wrong use of RElEASE argument
+        echo $RELEASE is unknown
+        exit
+    fi
     echo
     echo finished compiling
     echo
