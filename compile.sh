@@ -33,7 +33,7 @@ then
     elif [ "$RELEASE" = "" ]
     then    
         pdflatex --jobname=Ausarbeitung_$TIMESTAMP Ausarbeitung
-        bibtex Ausarbeitung
+        bibtex Ausarbeitung_$TIMESTAMP
         makeindex Ausarbeitung.nlo -s nomencl.ist -o Ausarbeitung.nls
         pdflatex --jobname=Ausarbeitung_$TIMESTAMP Ausarbeitung
         pdflatex --jobname=Ausarbeitung_$TIMESTAMP Ausarbeitung
